@@ -5,4 +5,7 @@ WORKDIR /workspace
 
 USER root
 
+RUN apt-get update \
+    && apt-get install -y mysql-client
+
 CMD /bin/sh -c "while sleep 1000; do :; done"
