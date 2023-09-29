@@ -1,6 +1,6 @@
 [submodule "awp-lumen-backend"]
 	path = lumen-backend
-	url = git@github.com:roxymeskell/awp-lumen-backend.git
+	url = https://github.com/roxymeskell/awp-lumen-backend.git
 [submodule "awp-vue-frontend"]
 	path = vue-frontend
-	url = git@github.com:roxymeskell/awp-vue-frontend.git
+	url = https://github.com/roxymeskell/awp-vue-frontend.git
