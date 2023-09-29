@@ -1,0 +1,50 @@
+version: '3.8'
+services:
+  # BACKEND
+  api:
+    image: lumen-backend
+    build:
+      context: ./lumen-backend/
+      dockerfile: ../docker-images/lumen-backend/Dockerfile
+    depends_on:
+      - mariadb
+    ports:
+      - '${API_PORT:-8080}:8080'
+    environment:
+      WAIT_HOSTS: mariadb:3306
+      APP_ENV: production
+      APP_DEBUG: 0
+      DB_CONNECTION: mysql
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_DATABASE: '${DB_DATABASE:-awp_employee_happiness}'
+      DB_USERNAME: '${DB_USERNAME:-user}'
+      DB_PASSWORD: '${DB_PASSWORD:-password}'
+    command: php -S 0.0.0.0:8080 public/index.php
+
+  # FRONTEND
+  vue:
+    image: vue_frontend
+    build: 
+      context: ./vue-frontend/
+      dockerfile: ../docker-images/vue-frontend/Dockerfile
+    ports:
+      - '${APP_PORT:-3000}:80'
+    command: nginx -g "daemon off;"
+
+  # DATABASE
+  mariadb:
+    image: "mariadb:latest"
+    volumes:
+     - awp_db_data:/var/lib/mysql
+     - ./lumen-backend/database/schema/:/docker-entrypoint-initdb.d/:ro
+    ports:
+       - '${FORWARD_DB_PORT:-3306}:3306'
+    environment:
+      MARIADB_RANDOM_ROOT_PASSWORD: 1
+      MARIADB_DATABASE: '${DB_DATABASE:-awp_employee_happiness}'
+      MARIADB_USER: '${DB_USERNAME:-user}'
+      MARIADB_PASSWORD: '${DB_PASSWORD:-password}'
+
+volumes:
+  awp_db_data:
