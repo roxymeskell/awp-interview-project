@@ -31,3 +31,17 @@ cp .env.example .env
 docker compose up
 ```
 Using the example config, the data endspoints should be available on port `8080` and the UI on port `3000`.
+
+## Dev
+In `lumen-backend`:
+```bash
+composer install                     # Install dependencies
+php artisan migrate:fresh            # Migrate
+php -S 0.0.0.0:8080 public/index.php # Serve
+```
+
+In `vue-frontend`:
+```bash
+npm install # Install dependencies
+npm run dev # Serve
+```

@@ -1,0 +1,38 @@
+{
+	"name": "AWP Sample Project",
+	"dockerComposeFile": "./docker-compose.yml",
+  	"service": "dev",
+	"workspaceFolder": "/workspace",
+	"forwardPorts": [ "dev:5173", "dev:8080", "db:3306" ],
+	"portsAttributes": {
+		"dev:5173": {"label": "Vite port"},
+		"dev:8080": {"label": "Lumen API port"},
+		"db:3306": {"label": "MariaDB port"}
+	},
+
+	"customizations": {
+		"vscode": {
+            "settings": {
+                "php.format.codeStyle": "PSR-2"
+            },
+			"extensions": [
+				"DEVSENSE.phptools-vscode",
+				"ryannaddy.laravel-artisan",
+				"EditorConfig.EditorConfig",
+				"mikestead.dotenv",
+				"eamodio.gitlens",
+				"Vue.volar"
+			]
+		},
+		"codespaces": {
+			"repositories": {
+				"roxymeskell/awp-lumen-backend": {
+					"permissions": "write-all"
+				},
+				"roxymeskell/awp-vue-frontend": {
+					"permissions": "write-all"
+				}
+			}
+		}
+	}
+}
