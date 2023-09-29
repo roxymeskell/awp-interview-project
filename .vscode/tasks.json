@@ -1,0 +1,46 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"command": "cd lumen-backend && composer install",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "composer: install - lumen-backend",
+			"detail": "install dependencies from package"
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "vue-frontend",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "npm: install - vue-frontend",
+			"detail": "install dependencies from package"
+		},
+		{
+			"label": "npm: dev - vue-frontend",
+			"detail": "Run Vite Dev Server",
+			"type": "npm",
+			"script": "dev",
+			"path": "vue-frontend",
+			"problemMatcher": [],
+			"group": "run"
+		},
+		{
+            "label": "php: -S 0.0.0.0:8080 public/index.php - lumen-backend",
+			"detail": "Run API Server",
+            "type": "shell",
+			"path": "lumen-backend",
+            "command": "cd lumen-backend && php -S 0.0.0.0:8080 public/index.php",
+            "group": "run"
+        },
+		{
+            "label": "php: artisan migrate:fresh - lumen-backend",
+			"detail": "Run fresh migration",
+            "type": "shell",
+            "command": "cd lumen-backend && php artisan migrate:fresh",
+            "group": "none"
+        },
+	]
+}
