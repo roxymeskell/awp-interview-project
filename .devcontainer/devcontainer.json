@@ -3,11 +3,11 @@
 	"dockerComposeFile": "./docker-compose.yml",
   	"service": "dev",
 	"workspaceFolder": "/workspace",
-	"forwardPorts": [ "dev:5173", "dev:8080", "db:3306" ],
+	"forwardPorts": [ 5173, 8080, "mariadb:3306" ],
 	"portsAttributes": {
-		"dev:5173": {"label": "Vite port"},
-		"dev:8080": {"label": "Lumen API port"},
-		"db:3306": {"label": "MariaDB port"}
+		"5173": {"label": "Vite port"},
+		"8080": {"label": "Lumen API port"},
+		"mariadb:3306": {"label": "MariaDB port"}
 	},
 	// && php -S 0.0.0.0:8080 public/index.php
     // && npm run dev
