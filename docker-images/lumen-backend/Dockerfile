@@ -28,9 +28,6 @@ php81-xml \
 php81-xmlwriter \
 php81-session
 
-# Set work directory
-# WORKDIR /var/www/html/
-
 # if need composer to update plugin / vendor used
 RUN php81 -r "copy('http://getcomposer.org/installer', 'composer-setup.php');" && \
 php81 composer-setup.php --install-dir=/usr/bin --filename=composer && \
@@ -41,12 +38,6 @@ COPY . /src
 WORKDIR /src
 
 RUN composer update
-
-# RUN php artisan migrate
-
-# ADD ./entrypoint.sh /entrypoint.sh
-# RUN ["chmod", "+x", "/entrypoint.sh"]
-# ENTRYPOINT ["/entrypoint.sh"]
 
 # run the php server service
 # move this command to -> docker-compose.yml
