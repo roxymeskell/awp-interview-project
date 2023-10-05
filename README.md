@@ -45,3 +45,29 @@ In `vue-frontend`:
 npm install # Install dependencies
 npm run dev # Serve
 ```
+
+## Personal Notes
+* On the chart
+  * Used `chart.js` as a base for the chart
+  * Implementing highly customized charts is difficult
+  * A quicker solution would've been to use an "out of the box" bar chart from the `chart.js` library
+  * Extended and made a custom chart with a custom scale
+  * Lots of drawing on canvas, wich is annoying when making something of variable width
+* On the data
+  * Was not provided a data structure to work with
+  * Elected to use whole numbers in the database and then calculated percentages in the model
+  * Database structure:
+    ```
+    happiness:
+      - id
+      - create_on
+      - updated_on
+      - name
+      - is_workplace
+      - very_happy
+      - happy
+      - content
+      - unhappy
+      - very_unhappy
+    ```
+  * A nullable one to many relation defining a parent "workplace" happiness may be useful
