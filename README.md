@@ -71,3 +71,13 @@ npm run dev # Serve
       - very_unhappy
     ```
   * A nullable one to many relation defining a parent "workplace" happiness may be useful
+* Things I like:
+  * The lumen app looks great. Could probably stand to clean up some of the template files, but that's it.
+  * The docker containers work great. Real proud of that.
+  * While the spacing and some of the labels on the chart aren't *perfect*, it's still pretty close and it looks good. It's also responsive.
+* Things I dislike:
+  * The frontend is not completely responisive. On smaller screens elements will overlap. Was it one of the requirements? No. But it still annoys me.
+  * I did not use a library like TailwindCSS. Admittedly the styling was minimal.
+  * I only just picked up Vue, I'm sure there's cleaner ways to do things than what I did.
+  * The types on the frontend—between the store and the chart at least—feel all over the place, could probably organize those better.
+  * The code for the chart is a bit of a mess. I'm not thrilled about using a custom plugin to define column gradients.
