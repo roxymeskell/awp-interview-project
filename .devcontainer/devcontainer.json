@@ -24,7 +24,8 @@
 				"EditorConfig.EditorConfig",
 				"mikestead.dotenv",
 				"eamodio.gitlens",
-				"Vue.volar"
+				"Vue.volar",
+				"dbaeumer.vscode-eslint"
 			]
 		},
 		"codespaces": {
