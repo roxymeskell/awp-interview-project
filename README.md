@@ -26,7 +26,13 @@ inputs).
 environment variables.
 
 ## To Run
-```
+```bash
+git clone https://github.com/roxymeskell/awp-sample-project.git
+git submodule update --init # Initialize and fetch data for submodules
+# OR
+git clone --recurse-submodules https://github.com/roxymeskell/awp-sample-project.git
+
+# THEN
 cp .env.example .env
 docker compose up
 ```
