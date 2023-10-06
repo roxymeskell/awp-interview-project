@@ -77,7 +77,6 @@ npm run dev # Serve
  in the frontend
 * Things I like:
   * The lumen app looks great. Could probably stand to clean up some of the template files, but that's it.
-  * The docker containers work great. Real proud of that.
   * While the spacing and some of the labels on the chart aren't *perfect*, it's still pretty close and it looks good. It's also responsive.
 * Things I dislike:
   * The data structure feels *weird* and I'm not entirely sure how to fix it within the parameters I was given.
