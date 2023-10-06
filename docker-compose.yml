@@ -28,11 +28,11 @@ services:
     build: 
       context: ./vue-frontend/
       dockerfile: ../docker-images/vue-frontend/Dockerfile
+      args:
+        VITE_API_BASE_URL: 'http://${LUMEN_HOST:-localhost}:${LUMEN_PORT:-8080}'
     ports:
       - '${APP_PORT:-3000}:80'
     command: nginx -g "daemon off;"
-    environment:
-      VITE_BASE_API_ENDPOINT: '${LUMEN_HOST:-localhost}:${LUMEN_PORT:-8080}'
 
   # DATABASE
   mariadb:

@@ -11,9 +11,7 @@ php81-openssl
 # for our code run smoothly
 RUN apk --no-cache --repository https://dl-cdn.alpinelinux.org/alpine/edge/main add \
 php81-json \
-php81-dom \
-curl \
-php81-curl \
+php81-dom  \
 php81-mysqli \
 php81-pdo_mysql
 
@@ -37,7 +35,8 @@ php81 -r "unlink('composer-setup.php');"
 COPY . /src
 WORKDIR /src
 
-RUN composer update
+# install composer dependencies
+RUN composer install --no-dev
 
 # run the php server service
 # move this command to -> docker-compose.yml
