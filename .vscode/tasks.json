@@ -19,13 +19,22 @@
 			"detail": "install dependencies from package"
 		},
 		{
+			"type": "npm",
+			"script": "lint",
+			"path": "vue-frontend",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "npm: lint - vue-frontend",
+			"detail": "lint frontend"
+		},
+		{
 			"label": "npm: dev - vue-frontend",
 			"detail": "Run Vite Dev Server",
 			"type": "npm",
 			"script": "dev",
 			"path": "vue-frontend",
 			"problemMatcher": [],
-			"group": "run"
+			"group": "none"
 		},
 		{
             "label": "php: -S 0.0.0.0:8080 public/index.php - lumen-backend",
@@ -33,7 +42,7 @@
             "type": "shell",
 			"path": "lumen-backend",
             "command": "cd lumen-backend && php -S 0.0.0.0:8080 public/index.php",
-            "group": "run"
+            "group": "none"
         },
 		{
             "label": "php: artisan migrate:fresh - lumen-backend",
@@ -42,5 +51,9 @@
             "command": "cd lumen-backend && php artisan migrate:fresh",
             "group": "none"
         },
+		{
+			"label": "Run Dev",
+			"dependsOn": ["npm: dev - vue-frontend", "php: -S 0.0.0.0:8080 public/index.php - lumen-backend"]
+		}
 	]
 }

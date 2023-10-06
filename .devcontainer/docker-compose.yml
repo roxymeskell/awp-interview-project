@@ -15,6 +15,7 @@ services:
         DB_DATABASE: awp_employee_happiness
         DB_USERNAME: root
         DB_PASSWORD:
+        VITE_API_BASE_URL: 'http://localhost:8080'
   mariadb:
     image: "mariadb:latest"
     ports:

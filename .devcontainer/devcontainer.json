@@ -25,7 +25,8 @@
 				"mikestead.dotenv",
 				"eamodio.gitlens",
 				"Vue.volar",
-				"dbaeumer.vscode-eslint"
+				"dbaeumer.vscode-eslint",
+				"Vue.vscode-typescript-vue-plugin"
 			]
 		},
 		"codespaces": {
