@@ -24,7 +24,7 @@ services:
 
   # FRONTEND
   vue:
-    image: vue_frontend
+    image: vue-frontend
     build: 
       context: ./vue-frontend/
       dockerfile: ../docker-images/vue-frontend/Dockerfile
