@@ -1,5 +1,5 @@
 > [!IMPORTANT]
-> This project is the result of a coding challenge that was given as part of an interview.
+> This repo is the result of a coding challenge.
 
 # AWP Sample Project
 This project should give you a good representation of what we do here at Amazing Workplace. Please create a web application based on the Figma file design using Vue.js for the front-end and Lumen for the back-end. It should be containerized using Docker and hosted in a private GitHub repository.
